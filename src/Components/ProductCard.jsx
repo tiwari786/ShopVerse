@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 export default function ProductCard({ product }) {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.cartItems); // ✅ get cart
+  const cartItems = useSelector((state) => state.cart.cartItems); //get cart
 
   const handleAddToCart = () => {
     const alreadyInCart = cartItems.find(item => item.id === product.id);

@@ -21,13 +21,6 @@ export default function Products() {
     fetchProduct();
   }, [])
 
-
-  // axios.get('https://fakestoreapi.com/products').then((response) => {
-  //   setProducts(response.data)
-  // }).catch((error) => {
-  //   console.error("Error fetching products:", error);
-  // })
-
   if (loading) {
     return <div>Loading...</div>
   }

@@ -1,4 +1,3 @@
-// pages/Home.jsx
 import React, { useEffect, useState } from 'react';
 import Banner from '../Components/Banner';
 import ProductCard from '../Components/ProductCard';

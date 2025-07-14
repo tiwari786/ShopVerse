@@ -13,7 +13,7 @@ const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const dropdownRef = useRef(null);
 
- const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const cartCount = cartItems.length;
 
   // Close dropdown on outside click
@@ -47,13 +47,13 @@ const Navbar = () => {
         <div className="relative flex items-center gap-4" ref={dropdownRef}>
           {/* Cart Icon */}
           <Link to="/cart" className="relative text-gray-700 hover:text-blue-600">
-  <FaShoppingCart className="text-2xl" />
-  {cartCount > 0 && (
-    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">
-      {cartCount}
-    </span>
-  )}
-</Link>
+            <FaShoppingCart className="text-2xl" />
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+                {cartCount}
+              </span>
+            )}
+          </Link>
 
           {/* Profile Dropdown */}
           <div
@@ -69,9 +69,8 @@ const Navbar = () => {
 
           {/* Dropdown */}
           <div
-            className={`absolute right-0 top-14 w-44 bg-white border rounded-md shadow-lg py-2 transform transition-all duration-200 ease-in-out origin-top ${
-              dropdownOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
-            }`}
+            className={`absolute right-0 top-14 w-44 bg-white border rounded-md shadow-lg py-2 transform transition-all duration-200 ease-in-out origin-top ${dropdownOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
+              }`}
           >
             {user ? (
               <>
@@ -104,9 +103,8 @@ const Navbar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-xl font-bold text-blue-600">ShopVerse</h2>
