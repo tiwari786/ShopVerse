@@ -13,6 +13,7 @@ import Profile from './Pages/Profile';
 import OrderHistory from './Pages/OrderHistory';
 import Checkout from './Pages/Checkout';
 import ThankYou from './Pages/ThankYou';
+import Contact from './Pages/Contact';
 
 export default function App() {
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ export default function App() {
         {
           path: 'products',
           element: <Products />,
+        },
+        {
+          path: "contact",
+          element: <Contact />
         },
         {
           path: 'products/:id',

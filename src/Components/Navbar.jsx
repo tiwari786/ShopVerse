@@ -38,9 +38,8 @@ const Navbar = () => {
         <div className="hidden md:flex gap-6 text-gray-700 text-sm font-medium">
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
+          <Link to="/contact">Contact</Link>
           <Link to="/about">About</Link>
-          <Link to="/mens">Mens</Link>
-          <Link to="/women">Women</Link>
         </div>
 
         {/* Right - Cart + Profile (visible on all sizes) */}

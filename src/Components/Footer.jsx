@@ -1,16 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white mt-10">
-      <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center text-sm">
-        <p>© {new Date().getFullYear()} ShopVerse. All rights reserved.</p>
-        <div className="flex gap-4 mt-2 md:mt-0">
-          <a href="#" className="hover:text-blue-400">Privacy Policy</a>
-          <a href="#" className="hover:text-blue-400">Terms of Service</a>
-          <a href="#" className="hover:text-blue-400">Contact</a>
+    <footer className="bg-gray-900 text-white px-4 py-6 mt-auto">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Left: Logo / Name */}
+        <div className="text-xl font-semibold text-white">
+          Shop<span className="text-blue-500">Verse</span>
+        </div>
+
+        {/* Center: Links */}
+        <div className="flex flex-wrap gap-4 text-sm text-gray-300">
+          <Link to="/" className="hover:text-white transition">Home</Link>
+          <Link to="/products" className="hover:text-white transition">Products</Link>
+          <Link to="/about" className="hover:text-white transition">About</Link>
+          <Link to="/contact" className="hover:text-white transition">Contact</Link>
+        </div>
+
+        {/* Right: Copyright */}
+        <div className="text-sm text-gray-400">
+          &copy; {new Date().getFullYear()} ShopVerse. All rights reserved.
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

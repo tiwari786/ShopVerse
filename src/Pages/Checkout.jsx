@@ -60,18 +60,22 @@ export default function Checkout() {
   };
 
   const handlePlaceOrder = () => {
-    if (selectedAddressIndex === null) {
-      toast.error("Please select an address");
-      return;
-    }
+    const newOrder = {
+      items: cartItems,
+      total,
+      address: addresses[selectedAddressIndex],
+      date: new Date().toLocaleString(),
+    };
 
-    const confirm = window.confirm("Are you sure you want to place the order?");
-    if (!confirm) return;
+    const existingOrders = JSON.parse(localStorage.getItem("orderHistory")) || [];
+    const updatedOrders = [...existingOrders, newOrder];
+    localStorage.setItem("orderHistory", JSON.stringify(updatedOrders));
 
     dispatch(clearCart());
-    toast.success("Order Placed Successfully 🛍️");
-    setTimeout(() => navigate("/thankyou"), 1500);
+    toast.success('Order Placed Successfully!');
+    navigate('/thankyou');
   };
+
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
